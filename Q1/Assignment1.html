@@ -1,0 +1,72 @@
+<script>
+
+
+//function to print the books
+// function outputBooks(books) {
+    
+//     document.write("Books are:");
+//     for (var i = 0; i < books.length; i++) 
+//     {
+//        document.write(books[i][0]);
+//     }
+// }
+
+//function to print the authors
+// //*function outputAuthors(books) {
+//     document.write("Authors are:");
+//     for (var i = 0; i < books.length; i++) 
+//     {
+//        document.write(books[i][1][0]+" "+books[i][1][1]);
+//     }
+// }//*  ctrl+/
+
+function outputAuthors(FirstName, LastName){
+    this.FirstName = FirstName;
+    this.LastName = LastName;
+}
+
+function outputBooks(title, publisher){
+    this.title = title;
+    this.publisher = publisher;
+}
+//multidimensional array to store the book information
+var books = [ 
+        [
+          new outputBooks ('Data Structures and Algorithms Analysis in C++', 'Pearson'), //title
+          new outputAuthors([ ['Mark','Weiss']]), //author(s) [first name, last name]
+              
+        ],
+        [
+            new outputBooks('Foundation of Finance','Pearson'),  //title
+            new outputAuthors([['Arthur', 'Keown.'],['John','Martin']]),  //author(s) [first name, last name]
+              //publisher
+        ],
+        [
+            new outputBooks('Literature for Composition', 'Longman' ), //title
+            new outputAuthors([['Slyvan', 'Barnet'], ['Willian', 'cain'] ,['Willian','Burto']]),  //author(s) [first name, last name]
+             //publisher
+        ]
+    ];
+
+    //function calls
+
+    for (let index = 0; index < books.length; index++) {
+    
+    document.write(books[index][0].title);
+    document.write('<br>');
+    document.write(books[index][0].publisher);
+    document.write('<br>');
+
+    
+    for (let index2 = 0; index2 <books[index][1].FirstName.length; index2++) {
+
+        
+        document.write("Author Name: " + books[index][1].FirstName[0][0] + " " + books[index2][1].FirstName[0][1]);     
+        document.write('<br>');    
+    }
+   
+
+    document.write('<br>');
+    document.write('<br>');
+    }
+    </script>
